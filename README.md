@@ -1,21 +1,16 @@
 # OembedService
 
-**TODO: Add description**
+Micro service written in elixir for getting embedded representations of an URL from a third party website via [oEmbed](https://oembed.com/) specification
 
-## Installation
+Uses https://github.com/r8/elixir-oembed library, so currently supports all the same providers that the library does
 
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `oembed_service` to your list of dependencies in `mix.exs`:
+## How to use
 
-```elixir
-def deps do
-  [
-    {:oembed_service, "~> 0.1.0"}
-  ]
-end
+Dockerized for easy use and deployment
+
 ```
+docker build -t oembed-service .
+docker run -p $PORT_YOU_WANT_TO_USE:4000 oembed-service:latest
 
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/oembed_service](https://hexdocs.pm/oembed_service).
-
+curl localhost:$PORT_YOU_WANT_TO_USE/?url=https://www.youtube.com/watch?v=dQw4w9WgXcQ
+```
