@@ -6,7 +6,6 @@ defmodule OembedService.Router do
 
   alias Plug.Conn
 
-  require IEx
   get "/" do
     case parse_params(conn) do
       %{"url" => url} ->

@@ -6,11 +6,13 @@ defmodule OembedService.Application do
   use Application
 
   alias OembedService.Router
+  alias OembedService.Providers.Registered
 
   def start(_type, _args) do
     # List all child processes to be supervised
     children = [
-       Plug.Adapters.Cowboy.child_spec(:http, Router, [], [port: 4000])
+      Plug.Adapters.Cowboy.child_spec(:http, Router, [], [port: 4000]),
+      Registered.child_spec(System.get_env("OVERRIDE_LIST_OF_PROVIDERS"))
       # Starts a worker by calling: OembedService.Worker.start_link(arg)
       # {OembedService.Worker, arg},
     ]
