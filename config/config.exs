@@ -3,7 +3,8 @@
 use Mix.Config
 
 config :oembed, :third_party_providers, [
-  OembedService.Providers.Registered
+  OembedService.Providers.Registered,
+  OembedService.Providers.Noembed
 ]
 
 # This configuration is loaded before any dependency and is restricted

@@ -1,6 +1,6 @@
 # OembedService
 
-Micro service written in elixir for getting embedded representations of an URL from a third party website via [oEmbed](https://oembed.com/) specification
+Microservice written in elixir for getting embedded representations of an URL from a third party website via [oEmbed](https://oembed.com/) specification
 
 Uses https://github.com/r8/elixir-oembed library, so currently supports all the same providers that the library does
 
